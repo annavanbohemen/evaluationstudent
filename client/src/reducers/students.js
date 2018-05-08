@@ -1,5 +1,5 @@
-import {ADD_STUDENT, GET_STUDENTS} from '../actions/students'
-
+import {ADD_STUDENT, GET_STUDENTS, DELETE_STUDENT} from '../actions/students'
+// [user1, user2, user3]
 
 export default (state = [], {type, payload}) => {
   switch (type) {
@@ -8,6 +8,9 @@ export default (state = [], {type, payload}) => {
 
     case ADD_STUDENT:
       return [...state, payload]
+
+    case DELETE_STUDENT:
+      return state.filter(student => student.id !== payload.id)
 
     default:
       return state

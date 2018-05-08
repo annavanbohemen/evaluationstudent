@@ -8,10 +8,6 @@ export const GET_BATCHES = 'GET_BATCHES'
 export const UPDATE_BATCH_SUCCESS = 'UPDATE_BATCH_SUCCESS'
 export const UPDATE_BATCHES = 'UPDATE_BATCHES'
 
-const updateBatches = batches => ({
-    type: UPDATE_BATCHES,
-    payload: batches
-  })
 
   const updateBatchSuccess = () => ({
     type: UPDATE_BATCH_SUCCESS

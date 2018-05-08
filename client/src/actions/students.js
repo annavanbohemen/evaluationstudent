@@ -6,11 +6,8 @@ import {baseUrl} from '../constants'
 export const ADD_STUDENT = 'ADD_STUDENT'
 export const GET_STUDENTS = 'GET_STUDENTS'
 export const UPDATE_STUDENT_SUCCESS = 'UPDATE_STUDENT_SUCCESS'
+export const DELETE_STUDENT = 'DELETE_STUDENT'
 
-
-  const updateStudentSuccess = () => ({
-    type: UPDATE_STUDENT_SUCCESS
-  })
 
   export const getStudents = (batchId) => (dispatch, getState) => {
     //const state = getState()
@@ -42,3 +39,15 @@ export const UPDATE_STUDENT_SUCCESS = 'UPDATE_STUDENT_SUCCESS'
       .catch(err => console.error(err))
   }
 
+  export const deleteStudent = (studentId) => (dispatch, getState) => {
+    //const state = getState()
+    //const jwt = state.currentUser.jwt
+  
+    request
+    .delete(`${baseUrl}/students/${studentId}`)
+    //.set('Authorization', `Bearer ${jwt}`)
+    .then(response => dispatch({
+      type: DELETE_STUDENT,
+      payload: response.body
+    }))
+  }

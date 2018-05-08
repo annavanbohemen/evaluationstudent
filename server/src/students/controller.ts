@@ -60,7 +60,7 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
   
       await student.remove()
 
-      return { message: 'Student was removed.'}
+      return { id: studentId }
     }
   
   }
