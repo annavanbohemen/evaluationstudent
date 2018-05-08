@@ -1,4 +1,4 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Index, OneToMany, ManyToOne } from 'typeorm'
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, OneToMany } from 'typeorm'
 import { IsString } from 'class-validator';
 import Student from '../students/entities'
 
@@ -9,7 +9,7 @@ export default class Batch extends BaseEntity {
   id?: number
 
   @Column()
-  batchNumber: number
+  batchNumber: string
 
   @IsString()
   @Column('text', { nullable: false })
