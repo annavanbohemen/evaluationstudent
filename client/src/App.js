@@ -1,21 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import LoginPage from './components/login/LoginPage'
+import SignupPage from './components/signup/SignupPage'
+import LogoutPage from './components/logout/LogoutPage'
+import BatchesPage from './components/batches/BatchesPage'
+import StudentsPage from './components/students/StudentsPage'
+import './App.css'
+import TopBar from './components/layout/TopBar'
+
+            // <Route exact path="/student/:id" component={} />
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <Router>
+        <div>
+          <nav>
+            <TopBar />
+          </nav>
+          <main style={{marginTop:75}}>
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/logout" component={LogoutPage} />
+            <Route exact path="/signup" component={SignupPage} />
+            <Route exact path="/batches" component={BatchesPage} />
+            <Route exact path="/batches/:id" component={StudentsPage} />
+            <Route exact path="/" render={ () => <Redirect to="/login" /> } />
+          </main>
+        </div>
+      </Router>
+    )
   }
 }
-
-export default App;
+export default App

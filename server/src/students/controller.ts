@@ -22,19 +22,8 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
 
     @Get('/batches/:id([0-9]+)/students')
     @HttpCode(200)
-    async getStudents(
-      @Param('id') batchId: number,
-      @Body() student: Student
-    ) {
-      const batch = await Batch.findOneById(batchId)
-      if (!batch) throw new NotFoundError('Batch does not exist!')
-  
-      const batchStudents = await Student.find({
-        ...student,
-        batch
-      })
-  
-      return batchStudents
+     getStudents() {
+      return Student.find()
     }
   
     //@Authorized()
