@@ -1,55 +1,85 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import green from './notebook-green.png'
-import yellow from './notebook-yellow.png'
-import red from './notebook-red.png'
-import Card, {CardMedia, CardContent} from 'material-ui/Card';
+import Card, { CardActions } from 'material-ui/Card';
 import Button from 'material-ui/Button'
+import Radio from 'material-ui/Radio';
 import TextField from 'material-ui/TextField'
+import green from 'material-ui/colors/green'
+import yellow from 'material-ui/colors/yellow'
+import red from 'material-ui/colors/red'
+import './EvaluationPage.css'
+import {createEvaluation} from '../../actions/evaluations'
 
 class EvaluationForm extends PureComponent {
-    state = {}
+    state = {
+        color: 'green',
+        studentId: Number((window.location.href).split('/').pop())
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.createEvaluation(this.state) 
+	}
+
+	handleChange = (event) => {
+        const {name, value} = event.target
+		this.setState({
+          [name]: value,
+		})
+    }
+
 
     render() {
         const initialValues = this.props.initialValues || {}
 
         return(
-            <Card>
+            <Card className='evaform'>
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         id='date'
-                        label='Date'
                         name='date'
+                        type='date'
+                        defaultValue="2017-05-24"
                         value={this.state.date || initialValues.date || ''}
                         onChange={this.handleChange}
-                    />
+                        placeholder="DD/MM/YYYY"
+                    /> <br/>
                     <TextField
                         id='remark'
                         label='Remarks'
                         name='remark'
                         value={this.state.remark || initialValues.remark || ''}
                         onChange={this.handleChange}
-                    />
+                        fullWidth
+                    /> <br/>
+                <Radio name="color" value="green" label="Green" checked={this.state.color === 'green'} onChange={ this.handleChange } 
+                style={{color: green[600]}}/>
+                <Radio name="color" value="yellow" label="Yellow" checked={this.state.color === 'yellow'} onChange={ this.handleChange }
+                style={{color: yellow[600]}}/>
+                <Radio name="color" value="red" label="Red" checked={this.state.color === 'red'} onChange={ this.handleChange }
+                style={{color: red[600]}}/>
+
+                    <CardActions>
+                        <Button 
+                            type='submit'
+                            variant="raised" 
+                            className="question-action"
+                        > 
+                        Save and Next 
+                        </Button>
+                    </CardActions>
+
                 </form>
-                <RadioGroup
-                    aria-label="evaluation"
-                    name="color"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                >
-                <Button name='color' variant="fab" aria-label="green" style={{margin: 3}}>
-                 <img src={green}/>
-                </Button>
-                <Button name='color' variant="fab" aria-label="yellow" style={{margin: 3}}>
-                 <img src={yellow}/>
-                </Button>
-                <Button name='color' variant="fab" aria-label="red" style={{margin: 3}}>
-                 <img src={red}/>
-                </Button>
-                </RadioGroup>
             </Card>
         )
     }
 }
 
-export default connect(null)(EvaluationForm)
+const mapStateToProps = function (state) {
+	return {
+        evaluations: state.evaluations,
+	}
+}
+
+export default connect(mapStateToProps, {createEvaluation}) (EvaluationForm);
+

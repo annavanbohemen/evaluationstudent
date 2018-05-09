@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import green from './notebook-green.png'
-import yellow from './notebook-yellow.png'
-import red from './notebook-red.png'
 import { getStudent } from '../../actions/students'
+import { getEvaluations } from '../../actions/evaluations'
 import EvaluationForm from './EvaluationForm'
-//import { getBatch } from '../../actions/batches'
 import Card, {CardMedia, CardContent} from 'material-ui/Card';
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
+import Grid from 'material-ui/Grid';
 import './EvaluationPage.css'
 
 class EvaluationPage extends PureComponent {
@@ -19,10 +17,29 @@ class EvaluationPage extends PureComponent {
 
    componentWillMount() {
     this.props.getStudent(this.state.studentId)
+    this.props.getEvaluations(this.state.studentId)
    }
 
+  //  colorPic = () => {
+  //     if (evaluation.color === "green") return "notebook-green"
+  //     else if (evaluation.color === "yellow") return "notebook-yellow" 
+  //     else if (evaluation.color === "red") return "notebook-red"
+  //     else return null
+  //  }
+
+
+   renderEvaluation = (evaluation, index) => {
+// <img src={evaluation.color} width="100" height="100" alt='showpic'/>
+
+    return (
+      <Grid item xs={12} sm={1} key={index}>
+        {evaluation.color}
+        </Grid>
+    )}
+
   render() {
-    const {student} = this.props
+    const {student, evaluation} = this.props
+    console.log('component', this.props.evaluation)
 
     return(
       <Paper className='outer-paper'>
@@ -38,7 +55,12 @@ class EvaluationPage extends PureComponent {
                     {student.firstName} {student.lastName}
                 </Typography>
                 <Typography variant="subheading" component="h4">
-                Evaluations
+                <div>
+                <h6> Evaluations </h6>
+                  <Grid container spacing={24}>
+                      {evaluation.map((evaluation, index) => this.renderEvaluation(evaluation, index))}
+                  </Grid>
+                </div>
                 </Typography>
             </CardContent>
             <div className='evaluations'>
@@ -56,8 +78,9 @@ class EvaluationPage extends PureComponent {
 const mapStateToProps = function (state) {
 	return {
         student: state.students,
-        batch: state.batches
+        evaluation: state.evaluations
+        
 	}
 }
 
-export default connect(mapStateToProps, {getStudent})(EvaluationPage)
+export default connect(mapStateToProps, {getStudent, getEvaluations})(EvaluationPage)

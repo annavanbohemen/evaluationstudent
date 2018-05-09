@@ -14,6 +14,7 @@ class StudentsPage extends PureComponent {
     state = {
         batchId : Number((window.location.href).split('/').pop())
     }
+    
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.createStudent(this.state)   

@@ -6,6 +6,11 @@ h2 {
   .evaluation-card {
     margin: 20px 10px 10px 0px;
   }
+
+  .evaform{
+    margin: 20px 10px 10px 0px;
+    padding: 10px;
+  }
   
   .outer-paper {
     margin: auto;

@@ -1,22 +1,36 @@
-import { Authorized, Body, Get, JsonController, NotFoundError, Param, Patch, Post } from "routing-controllers";
-import Student from "./entities";
+import { Authorized, HttpCode, Body, Get, JsonController, BadRequestError, NotFoundError, Param, Patch, Post } from "routing-controllers";
+import Student from "../students/entities";
 //import Batch from "../batches/entities";
+import Evaluation from "./entities"
     
 @JsonController()
 export default class EvaluationController {
-
-
+    
+    //@Authorized()
+    @Get('/students/:id([0-9]+)/evaluations')
+    @HttpCode(200)
+    async getEvaluations(
+      @Param('id') studentId: number
+    ) {
+      const student = await Student.findOneById(studentId)
+      if(!student) throw new BadRequestError(`Student not found`)
+  
+      const evaluation = await Evaluation.find()
+      return { evaluation }
+    }
 
     //@Authorized()
-    @Patch('/students/:id([0-9]+)')
-    async updateStudent(
-        @Body() update: Partial<Student>,
-        @Param('id') studentId: number
-        ) {
-          const student = await Student.findOneById(studentId)
-          if(!student) throw new NotFoundError('Student not found.')
-      
-          return Student.merge(student, update)
-        }
-
+    @Post('/students/:id([0-9]+)/evaluations')
+    @HttpCode(201)
+    async createEvaluation(
+      @Body() evaluation: Evaluation,
+      @Param('id') studentId: number
+    ) {
+      const student = await Student.findOneById(studentId)
+      if(!student) throw new NotFoundError('Student does not exist')
+  
+      const createdEvaluation = await Evaluation.create({...evaluation, student}).save()
+  
+      return createdEvaluation
     }
+}
