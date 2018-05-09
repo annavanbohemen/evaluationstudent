@@ -44,7 +44,7 @@ class StudentsList extends PureComponent {
                 </Typography>
             </CardContent>
                 <CardActions>
-                    <Link to={`/students/edit/${student.id}`}>
+                    <Link to={`/students/${student.id}`} style={{textDecoration: 'none'}}>
                     <Button
                         size="small"
                         variant="raised"

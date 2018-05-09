@@ -10,7 +10,7 @@ export default class Evaluation extends BaseEntity {
 
   @IsString()
   @Column('text', { nullable: false })
-  colour: string
+  color: string
 
   @Column('text', { default: new Date() })
   date: string

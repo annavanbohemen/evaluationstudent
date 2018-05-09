@@ -6,6 +6,18 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
   export default class StudentController {
   
     //@Authorized()
+    @Get('/students/:id([0-9]+)')
+    async getStudent(
+      @Param('id') studentId: number
+    ) {
+      console.log('backend', studentId)
+      const student = await Student.findOneById(studentId)
+      if(!student) throw new NotFoundError('Student not found.')
+  
+      return student
+    }
+    
+    //@Authorized()
     @Post('/batches/:id([0-9]+)/students')
     @HttpCode(201)
     async createStudent(
@@ -25,29 +37,23 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
      getStudents() {
       return Student.find()
     }
+    
+    // @Get('/batches/:id([0-9]+)/students')
+    // @HttpCode(200)
+    // async getStudents(
+    //   @Param('id') batchId: number,
+    //   @Body() student: Student
+    // ) {
+    //   const batch = await Batch.findOneById(batchId)
+    //   if (!batch) throw new NotFoundError('Batch not found!')
   
-    //@Authorized()
-    @Get('/students/:id([0-9]+)')
-    async getStudent(
-      @Param('id') studentId: number
-    ) {
-        const student = await Student.findOneById(studentId)
-        if(!student) throw new NotFoundError('Student not found.')
+    //   const students = await Student.find({
+    //     ...student,
+    //     batch
+    //   })
   
-      return student
-    }
-  
-    //@Authorized()
-    @Patch('/students/:id([0-9]+)')
-    async updateStudent(
-      @Body() update: Partial<Student>,
-      @Param('id') studentId: number
-    ) {
-      const student = await Student.findOneById(studentId)
-      if(!student) throw new NotFoundError('Student not found.')
-  
-      return Student.merge(student, update)
-    }
+    //   return students
+    // }
 
   
     //@Authorized()

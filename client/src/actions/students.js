@@ -7,8 +7,24 @@ export const ADD_STUDENT = 'ADD_STUDENT'
 export const GET_STUDENTS = 'GET_STUDENTS'
 export const UPDATE_STUDENT_SUCCESS = 'UPDATE_STUDENT_SUCCESS'
 export const DELETE_STUDENT = 'DELETE_STUDENT'
+export const GET_STUDENT = 'GET_STUDENT'
 
-
+export const getStudent = (StudentId) => (dispatch, getState) => {
+  //const state = getState()
+  //const jwt = state.currentUser.jwt
+   
+  request
+    .get(`${baseUrl}/students/${StudentId}`)
+    //.set('Authorization', `Bearer ${jwt}`)
+    .then(response => {
+      dispatch({
+        type: GET_STUDENT,
+        payload: response.body
+      })})
+    .catch(err => console.log(err))
+  
+  }
+  
   export const getStudents = (batchId) => (dispatch, getState) => {
     //const state = getState()
     //const jwt = state.currentUser.jwt

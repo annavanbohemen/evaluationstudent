@@ -29,7 +29,7 @@ renderBatch = (batch) => {
           </Typography>
       </CardContent>
         <CardActions>
-            <Link to={`/batches/edit/${batch.id}`}>
+            <Link to={`/batches/edit/${batch.id}`} style={{textDecoration: 'none'}}>
             <Button
                 size="small"
                 color="secondary"
@@ -38,7 +38,7 @@ renderBatch = (batch) => {
                     EDIT BATCH INFO
             </Button> 
             </Link>
-            <Link to={`/batches/${batch.id}/students`} >
+            <Link to={`/batches/${batch.id}`} style={{textDecoration: 'none'}}>
             <Button
                 size="small"
                 color="secondary"

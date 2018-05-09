@@ -5,10 +5,11 @@ import SignupPage from './components/signup/SignupPage'
 import LogoutPage from './components/logout/LogoutPage'
 import BatchesPage from './components/batches/BatchesPage'
 import StudentsPage from './components/students/StudentsPage'
+import EvaluationPage from './components/evaluations/EvaluationPage' 
 import './App.css'
 import TopBar from './components/layout/TopBar'
 
-            // <Route exact path="/student/:id" component={} />
+            
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/signup" component={SignupPage} />
             <Route exact path="/batches" component={BatchesPage} />
             <Route exact path="/batches/:id" component={StudentsPage} />
+            <Route exact path="/students/:id" component={EvaluationPage} />
             <Route exact path="/" render={ () => <Redirect to="/login" /> } />
           </main>
         </div>

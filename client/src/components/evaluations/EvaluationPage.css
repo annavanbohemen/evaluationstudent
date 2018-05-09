@@ -1,0 +1,15 @@
+h2 {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .evaluation-card {
+    margin: 20px 10px 10px 0px;
+  }
+  
+  .outer-paper {
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    width: 90%;
+  }
