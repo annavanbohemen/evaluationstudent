@@ -24,7 +24,7 @@ class EvaluationPage extends PureComponent {
    renderEvaluation = (evaluation, index) => {
     return (
       <Grid item xs={12} sm={1} key={index}>
-        <img src={`/notebook-${evaluation.color}.png`}/>
+        <img src={`/notebook-${evaluation.color}.png`} alt={evaluation.color} />
         </Grid>
     )}
 

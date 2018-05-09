@@ -20,5 +20,5 @@ export default class Batch extends BaseEntity {
   endDate: string
 
   @OneToMany(_=> Student, student => student.batch, { eager: true })
-  student: Student[]
+  students: Student[]
 }

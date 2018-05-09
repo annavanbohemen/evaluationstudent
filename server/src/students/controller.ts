@@ -31,29 +31,18 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
   
       return createdStudent
     }
-
+    
     @Get('/batches/:id([0-9]+)/students')
     @HttpCode(200)
-     getStudents() {
-      return Student.find()
+    async getStudents(
+      @Param('id') batchId: number
+    ) {
+      const batch = await Batch.findOneById(batchId)
+      if (!batch) throw new NotFoundError('Batch not found!')
+  
+      return batch.students
+  
     }
-    
-    // @Get('/batches/:id([0-9]+)/students')
-    // @HttpCode(200)
-    // async getStudents(
-    //   @Param('id') batchId: number,    //sending Batch number!! not ID.. need ID
-    //   @Body() student: Student
-    // ) {
-    //   const batch = await Batch.findOneById(batchId)
-    //   if (!batch) throw new NotFoundError('Batch not found!')
-  
-    //   const students = await Student.find({
-    //     ...student,
-    //     batch
-    //   })
-  
-    //   return students
-    // }
 
   
     //@Authorized()
