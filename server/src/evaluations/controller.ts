@@ -15,9 +15,9 @@ export default class EvaluationController {
       const student = await Student.findOneById(studentId)
       if(!student) throw new BadRequestError(`Student not found`)
   
-      const evaluation = await Evaluation.find()
-      return { evaluation }
+      return student.evaluations
     }
+
 
     //@Authorized()
     @Post('/students/:id([0-9]+)/evaluations')

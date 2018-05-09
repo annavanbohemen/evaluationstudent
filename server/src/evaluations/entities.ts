@@ -18,6 +18,6 @@ export default class Evaluation extends BaseEntity {
   @Column('text', { nullable: true })
   remark: string
 
-  @ManyToOne(_ => Student, student => student.evaluation)
+  @ManyToOne(_ => Student, student => student.evaluation, { onDelete: 'CASCADE' })
   student: Student
 }
