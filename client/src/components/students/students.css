@@ -14,6 +14,21 @@ h2 {
     width: 80%;
   }
 
-  .media {
-    height: 60
-  }
+  .createStudent {
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: rgb(246, 245, 245);
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px; 
+  color: white; 
+}

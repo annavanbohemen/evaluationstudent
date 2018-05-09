@@ -4,6 +4,7 @@ import {ADD_STUDENT, GET_STUDENTS, GET_STUDENT, DELETE_STUDENT} from '../actions
 export default (state = [], {type, payload}) => {
   switch (type) {
     case GET_STUDENT:
+
     return payload
 
     case GET_STUDENTS:

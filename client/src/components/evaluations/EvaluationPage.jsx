@@ -20,27 +20,17 @@ class EvaluationPage extends PureComponent {
     this.props.getEvaluations(this.state.studentId)
    }
 
-  //  colorPic = () => {
-  //     if (evaluation.color === "green") return "notebook-green"
-  //     else if (evaluation.color === "yellow") return "notebook-yellow" 
-  //     else if (evaluation.color === "red") return "notebook-red"
-  //     else return null
-  //  }
-
 
    renderEvaluation = (evaluation, index) => {
-// <img src={evaluation.color} width="100" height="100" alt='showpic'/>
-
     return (
       <Grid item xs={12} sm={1} key={index}>
-        {evaluation.color}
+        <img src={`/notebook-${evaluation.color}.png`}/>
         </Grid>
     )}
 
   render() {
     const {student, evaluation} = this.props
-    console.log('component', this.props.evaluation)
-
+   
     return(
       <Paper className='outer-paper'>
         <Card className='evaluation-card'>

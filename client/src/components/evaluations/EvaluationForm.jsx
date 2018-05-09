@@ -39,7 +39,6 @@ class EvaluationForm extends PureComponent {
                         id='date'
                         name='date'
                         type='date'
-                        defaultValue="2017-05-24"
                         value={this.state.date || initialValues.date || ''}
                         onChange={this.handleChange}
                         placeholder="DD/MM/YYYY"
@@ -64,6 +63,7 @@ class EvaluationForm extends PureComponent {
                             type='submit'
                             variant="raised" 
                             className="question-action"
+                            onClick={window.history.go(1)}
                         > 
                         Save and Next 
                         </Button>

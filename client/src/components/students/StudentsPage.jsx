@@ -34,13 +34,14 @@ class StudentsPage extends PureComponent {
 
         return(
             <Paper className="outer-paper">
-               <form onSubmit={this.handleSubmit}>
+               <form onSubmit={this.handleSubmit} className='createStudent'>
                     <TextField
                         id='student'
                         label='Student Firstname'
                         name='firstName'
                         value={this.state.firstName || initialValues.firstName || ''}
                         onChange={this.handleChange}
+                        style={{margin: 10}}
                         />
                     <TextField
                         id='student'
@@ -48,6 +49,7 @@ class StudentsPage extends PureComponent {
                         name='lastName'
                         value={this.state.lastName || initialValues.lastName || ''}
                         onChange={this.handleChange}
+                        style={{margin: 10}}
                         />   
                     <TextField
                         id='picture'
@@ -55,6 +57,7 @@ class StudentsPage extends PureComponent {
                         name='picture'
                         value={this.state.picture || initialValues.picture || ''}
                         onChange={this.handleChange}
+                        style={{margin: 10}}
                         />   
                             <Button
                                 type='submit'
@@ -65,6 +68,9 @@ class StudentsPage extends PureComponent {
                                 Create Student
                             </Button>
                 </form>
+                    <div id="myProgress">
+                        <div id="myBar">10%</div>
+                    </div>
 
                 <StudentsList/>
 
