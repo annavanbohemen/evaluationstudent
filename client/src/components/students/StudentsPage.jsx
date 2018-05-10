@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import StudentsList from './StudentsList'
+import AskQButton from './AskQButton'
 import Paper from 'material-ui/Paper'
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField'
@@ -67,6 +68,8 @@ class StudentsPage extends PureComponent {
                                 >
                                 Create Student
                             </Button>
+
+                            <AskQButton/>
                 </form>
                     <div id="myProgress">
                         <div id="myBar">10%</div>
