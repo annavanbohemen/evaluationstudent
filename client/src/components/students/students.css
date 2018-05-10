@@ -32,3 +32,8 @@ h2 {
   line-height: 30px; 
   color: white; 
 }
+
+.ask-question {
+  margin: 20px 10px 10px 0px;
+  float: right;
+}

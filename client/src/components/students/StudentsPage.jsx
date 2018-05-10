@@ -69,11 +69,12 @@ class StudentsPage extends PureComponent {
                                 Create Student
                             </Button>
 
-                            <AskQButton/>
                 </form>
                     <div id="myProgress">
                         <div id="myBar">10%</div>
                     </div>
+
+                    <AskQButton/>
 
                 <StudentsList/>
 

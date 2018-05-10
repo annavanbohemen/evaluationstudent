@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import Button from 'material-ui/Button';
-
+import './students.css'
 
 class AskQButton extends PureComponent {
 
@@ -30,8 +30,7 @@ class AskQButton extends PureComponent {
 
         let chosenStudent = selectedStudents[Math.floor(Math.random()*selectedStudents.length)]
 
-        console.log(chosenStudent)
-        return chosenStudent
+        alert(chosenStudent.firstName + ' ' + chosenStudent.lastName)
     }
 
 
@@ -42,12 +41,12 @@ class AskQButton extends PureComponent {
 
 
         return (
-            <div>
+            <div className="ask-question">
                 <Button
                     type='submit'
                     color="secondary"
                     variant="raised"
-                    className="ask-question"
+                    style={{backgroundColor:'#3f51b5'}}
                     onClick={ this.randomStudent }
                      >
                     ASK RANDOM QUESTION
