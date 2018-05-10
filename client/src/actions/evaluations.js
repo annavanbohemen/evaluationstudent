@@ -32,7 +32,7 @@ export const createEvaluation = (evaluation) => (dispatch, getState) => {
       .then(response => {
         dispatch({
           type: GET_EVALUATIONS,
-          payload: response.body.evaluation
+          payload: response.body
         })
       })
       .catch(err => console.error(err))

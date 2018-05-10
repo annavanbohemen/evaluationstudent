@@ -24,8 +24,8 @@ export default class Student extends BaseEntity {
   picture: string
 
   @OneToMany(_ => Evaluation, evaluation => evaluation.student, { eager: true })
-  evaluation: Evaluation[]
+  evaluations: Evaluation[]
 
-  @ManyToOne(_=> Batch, batch => batch.student)
+  @ManyToOne(_=> Batch, batch => batch.students)
   batch: Batch
 }
