@@ -16,16 +16,34 @@ class EvaluationForm extends PureComponent {
         studentId: Number((window.location.href).split('/').pop())
     };
 
-    handleSubmit = (e) => {
-        e.preventDefault()
+    handleSubmit = (event) => {
+        event.preventDefault()
         this.props.createEvaluation(this.state) 
-	}
+    }
+    
+    // var inventory = [
+    //     {name: 'apples', quantity: 2},
+    //     {name: 'bananas', quantity: 0},
+    //     {name: 'cherries', quantity: 5}
+    // ];
+    
+    // function isCherries(fruit) { 
+    //     return fruit.name === 'cherries';
+    // }
+    
+    // console.log(inventory.find(isCherries)); 
 
 	handleChange = (event) => {
         const {name, value} = event.target
-		this.setState({
-          [name]: value,
-		})
+        const {evaluations} = this.props
+
+        if (evaluations.find(evaluation => evaluation.date === value)) {
+            alert ('date already exists!')}
+            else {
+                this.setState({
+                    [name]: value,
+                })
+            }
     }
 
 
