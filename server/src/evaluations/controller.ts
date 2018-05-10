@@ -6,7 +6,7 @@ import Evaluation from "./entities"
 @JsonController()
 export default class EvaluationController {
     
-    //@Authorized()
+    @Authorized()
     @Get('/students/:id([0-9]+)/evaluations')
     @HttpCode(200)
     async getEvaluations(
@@ -19,7 +19,7 @@ export default class EvaluationController {
     }
 
 
-    //@Authorized()
+    @Authorized()
     @Post('/students/:id([0-9]+)/evaluations')
     @HttpCode(201)
     async createEvaluation(

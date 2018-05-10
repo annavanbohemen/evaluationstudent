@@ -5,7 +5,7 @@ import { Authorized, BadRequestError, Body, Delete, Get, Put, HttpCode, JsonCont
   @JsonController()
   export default class StudentController {
   
-    //@Authorized()
+    @Authorized()
     @Get('/students/:id([0-9]+)')
     async getStudent(
       @Param('id') studentId: number
@@ -16,7 +16,7 @@ import { Authorized, BadRequestError, Body, Delete, Get, Put, HttpCode, JsonCont
       return student
     }
     
-    //@Authorized()
+    @Authorized()
     @Post('/batches/:id([0-9]+)/students')
     @HttpCode(201)
     async createStudent(
@@ -31,7 +31,7 @@ import { Authorized, BadRequestError, Body, Delete, Get, Put, HttpCode, JsonCont
       return createdStudent
     }
 
-    //@Authorized()
+    @Authorized()
     @Put('/students/:id([0-9]+)')
     @HttpCode(200)
     async updateStudent(
@@ -44,7 +44,7 @@ import { Authorized, BadRequestError, Body, Delete, Get, Put, HttpCode, JsonCont
       return Student.merge(student, update).save()
     }
 
-    
+    @Authorized()
     @Get('/batches/:id([0-9]+)/students')
     @HttpCode(200)
     async getStudents(
@@ -57,8 +57,7 @@ import { Authorized, BadRequestError, Body, Delete, Get, Put, HttpCode, JsonCont
 
     }
 
-  
-    //@Authorized()
+    @Authorized()
     @Delete('/students/:id([0-9]+)')
     async deleteStudent(
       @Param('id') studentId: number

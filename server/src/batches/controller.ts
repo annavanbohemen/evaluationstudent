@@ -4,7 +4,7 @@ import Batch from './entities'
 @JsonController()
 export default class BatchController {
 
-  //@Authorized()
+  @Authorized()
   @Post('/batches')
   @HttpCode(201)
   async createBatch(
@@ -14,14 +14,14 @@ export default class BatchController {
     return createdBatch
   }
 
-  //@Authorized()
+  @Authorized()
   @Get('/batches')
   getBatches() {
     return Batch.find()
   }
 
 
-  //@Authorized()
+  @Authorized()
   @Get('/batches/:id([0-9]+)')
   @HttpCode(200)
   async getBatch(
