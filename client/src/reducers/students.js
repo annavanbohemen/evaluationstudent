@@ -1,12 +1,8 @@
-import {ADD_STUDENT, GET_STUDENTS, GET_STUDENT, DELETE_STUDENT} from '../actions/students'
+import {ADD_STUDENT, GET_STUDENTS, DELETE_STUDENT} from '../actions/students'
 // [user1, user2, user3] [[user1, user2] user3]
 
 export default (state = [], {type, payload}) => {
   switch (type) {
-    case GET_STUDENT:
-
-    return payload
-
     case GET_STUDENTS:
         return payload
 
