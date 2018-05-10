@@ -23,7 +23,11 @@ export default class Student extends BaseEntity {
   @Column('text', { nullable: false })
   picture: string
 
+<<<<<<< HEAD
   @OneToMany(_ => Evaluation, evaluation => evaluation.student, { eager: true })
+=======
+  @OneToMany(_ => Evaluation, evaluation => evaluation.student, { eager: true, })
+>>>>>>> 179f0d0ba456964028ac93cac6fe6e1f5cf50640
   evaluations: Evaluation[]
 
   @ManyToOne(_=> Batch, batch => batch.students)

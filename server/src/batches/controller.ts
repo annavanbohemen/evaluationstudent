@@ -27,7 +27,7 @@ export default class BatchController {
   async getBatch(
     @Param('id') batchId: number
   ) {
-    const batch= await Batch.findOneById(batchId)
+    const batch = await Batch.findOneById(batchId)
     if (!batch) throw new NotFoundError('Batch does not exist!')
     return batch
   }

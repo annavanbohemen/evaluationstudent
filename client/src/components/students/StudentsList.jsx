@@ -28,7 +28,6 @@ class StudentsList extends PureComponent {
   
 
     renderStudent = (student, index) => {
-
         return (
         <Grid item xs={12} sm={4} key={index}>
             <Card key={student.id} className="student-card">
@@ -40,7 +39,8 @@ class StudentsList extends PureComponent {
                 />
             <CardContent>
                 <Typography variant="headline" component="h2">
-                    {student.firstName} {student.lastName}
+                    {student.firstName} {student.lastName} <br/>
+                    <img src={`/notebook-${student.evaluations[0].color}.png`} alt={student.evaluations[0].color} />
                 </Typography>
             </CardContent>
                 <CardActions>

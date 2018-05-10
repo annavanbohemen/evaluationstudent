@@ -10,7 +10,6 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
     async getStudent(
       @Param('id') studentId: number
     ) {
-      console.log('backend', studentId)
       const student = await Student.findOneById(studentId)
       if(!student) throw new NotFoundError('Student not found.')
   
@@ -39,8 +38,14 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
     ) {
       const batch = await Batch.findOneById(batchId)
       if (!batch) throw new NotFoundError('Batch not found!')
+<<<<<<< HEAD
   
       return batch.students
+=======
+  
+      return batch.students
+  
+>>>>>>> 179f0d0ba456964028ac93cac6fe6e1f5cf50640
     }
 
   
