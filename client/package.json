@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "material-ui": "next",
-    "material-ui-icons": "^1.0.0-beta.36",
+    "@material-ui/icons": "^1.0.0-beta.43",
     "material-ui-image": "^3.0.0-pre.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

@@ -32,6 +32,3 @@ export default class BatchController {
     return batch
   }
 }
-
-//@DELETE (remove batch)
-//@PUT (update batch)

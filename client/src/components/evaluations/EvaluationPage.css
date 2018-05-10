@@ -18,3 +18,8 @@ h2 {
     padding: 20px;
     width: 90%;
   }
+
+  .edit-button {
+    margin: 10px 10px 10px 0px;
+    float: right;
+  }

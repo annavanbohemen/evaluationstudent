@@ -70,9 +70,10 @@ class EvaluationForm extends PureComponent {
                             type='submit'
                             variant="raised" 
                             className="question-action"
+                            color="secondary"
                             onClick={window.history.go(1)}
                         > 
-                        Save and Next 
+                        Submit 
                         </Button>
                     </CardActions>
 

@@ -4,8 +4,8 @@ import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
 import Grid from 'material-ui/Grid';
-//import CreateIcon from '@material-ui/icons/Create'
-//import InfoOutlineIcon from '@material-ui/icons/InfoOutlineIcon'
+import InfoOutline from '@material-ui/icons/InfoOutline'
+import DeleteOutline from '@material-ui/icons/Delete'
 import './students.css'
 import { getStudents, deleteStudent } from '../../actions/students'
 import {Link} from 'react-router-dom'
@@ -28,6 +28,11 @@ class StudentsList extends PureComponent {
   
 
     renderStudent = (student, index) => {
+        let evalutionImage = '/placeholder2.png'
+        if(student.evaluations && student.evaluations.length > 0){
+            evalutionImage = `/notebook-${student.evaluations[0].color}.png`
+        }
+        
         return (
         <Grid item xs={12} sm={4} key={index}>
             <Card key={student.id} className="student-card">
@@ -40,7 +45,7 @@ class StudentsList extends PureComponent {
             <CardContent>
                 <Typography variant="headline" component="h2">
                     {student.firstName} {student.lastName} <br/>
-                    <img src={`/notebook-${student.evaluations[0].color}.png`} alt={student.evaluations[0].color} />
+                 <img src={evalutionImage} alt=" " />
                 </Typography>
             </CardContent>
                 <CardActions>
@@ -49,7 +54,7 @@ class StudentsList extends PureComponent {
                         size="small"
                         variant="raised"
                         > 
-                            STUDENT INFO 
+                            <InfoOutline/>
                     </Button> 
                     </Link>
                     <Button
@@ -57,7 +62,7 @@ class StudentsList extends PureComponent {
                         variant="raised"
                         onClick={ () => this.deleteStudent(student.id) }
                         > 
-                            DELETE STUDENT 
+                            <DeleteOutline/>
                     </Button> 
                 </CardActions>
             </Card>

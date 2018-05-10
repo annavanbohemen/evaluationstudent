@@ -36,6 +36,10 @@ class BatchesPage extends PureComponent {
                         id='batch'
                         label='Batch Number'
                         name='batchNumber'
+                        placeholder='#'
+                        InputLabelProps={{
+                            shrink: true,
+                          }}
                         value={this.state.batchNumber || initialValues.batchNumber || ''}
                         onChange={this.handleChange}
                         />
@@ -43,6 +47,10 @@ class BatchesPage extends PureComponent {
                         id='startdate'
                         label='Start Date'
                         name='startDate'
+                        type='date'
+                        InputLabelProps={{
+                            shrink: true,
+                          }}
                         value={this.state.startDate || initialValues.startDate || ''}
                         onChange={this.handleChange}
                         />    
@@ -50,6 +58,10 @@ class BatchesPage extends PureComponent {
                         id='enddate'
                         label='End Date'
                         name='endDate'
+                        type='date'
+                        InputLabelProps={{
+                            shrink: true,
+                          }}
                         value={this.state.endDate || initialValues.endDate || ''}
                         onChange={this.handleChange}
                         />   

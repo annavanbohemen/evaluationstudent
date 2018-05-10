@@ -1,18 +1,32 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { getStudent } from '../../actions/students'
+import { getStudent, updateStudent } from '../../actions/students'
 import { getEvaluations } from '../../actions/evaluations'
 import EvaluationForm from './EvaluationForm'
-import Card, {CardMedia, CardContent} from 'material-ui/Card';
+import Card, {CardMedia, CardContent} from 'material-ui/Card'
+import Button from 'material-ui/Button'
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
-import Grid from 'material-ui/Grid';
+import Grid from 'material-ui/Grid'
+import StudentEditForm from './StudentEditForm'
 import './EvaluationPage.css'
 
 class EvaluationPage extends PureComponent {
 
   state = {
-    studentId: Number((window.location.href).split('/').pop())
+    studentId: Number((window.location.href).split('/').pop()),
+    edit: false
+}
+
+  toggleEdit = () => {
+    this.setState({
+      edit: !this.state.edit
+    })
+}
+
+  updateStudent = (student) => {
+    this.props.updateStudent(this.state.studentId, student)
+    this.toggleEdit()
 }
 
    componentWillMount() {
@@ -32,8 +46,25 @@ class EvaluationPage extends PureComponent {
     const {student, evaluation} = this.props
    
     return(
+      <div>
+      {
+        this.state.edit &&
+        <StudentEditForm initialValues={student} onSubmit={this.updateStudent} />
+      }
+      {
+          !this.state.edit &&
       <Paper className='outer-paper'>
         <Card className='evaluation-card'>
+          <div className="edit-button">
+            <Button 
+                type='submit'
+                variant="raised" 
+                color="secondary"
+                onClick={ this.toggleEdit }
+                > 
+                            EDIT 
+              </Button>
+            </div>
         <CardMedia
                     className='media'
                     title='foto of student'
@@ -56,10 +87,13 @@ class EvaluationPage extends PureComponent {
             <div className='evaluations'>
             </div>
         </Card>
+    
         <div>
           <EvaluationForm/>
           </div>
       </Paper>
+      }
+      </div>
     )
   }
 
@@ -73,4 +107,4 @@ const mapStateToProps = function (state) {
 	}
 }
 
-export default connect(mapStateToProps, {getStudent, getEvaluations})(EvaluationPage)
+export default connect(mapStateToProps, {getStudent, getEvaluations, updateStudent})(EvaluationPage)

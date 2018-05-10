@@ -2,6 +2,7 @@ import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, OneToMany } from 't
 import { IsString } from 'class-validator';
 import Student from '../students/entities'
 
+
 @Entity()
 export default class Batch extends BaseEntity {
 
