@@ -8,3 +8,4 @@ const jwtData = jwt => {
   
   export const isExpired = jwt => jwtData(jwt).exp < (Date.now()/1000)
   
+  

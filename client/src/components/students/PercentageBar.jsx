@@ -8,8 +8,13 @@ render () {
 
     return(
         <div id="myProgress">
-            <div id="myBar">10%</div>
+        <div id="myBar">30%
+          <div id='mySecBar'>20%
+            <div id='myThirdBar'>5%
+            </div>
+          </div>
         </div>
+    </div>
     )
 }
 }
