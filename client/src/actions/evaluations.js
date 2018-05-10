@@ -1,19 +1,19 @@
 import * as request from 'superagent'
 import {baseUrl} from '../constants'
-//import {logout} from './users'
-//import {isExpired} from '../jwt'
+import {logout} from './users'
+import {isExpired} from '../jwt'
 
 export const ADD_EVALUATION = 'ADD_EVALUATION'
 export const GET_EVALUATIONS = 'GET_EVALUATIONS'
 
 
 export const createEvaluation = (evaluation) => (dispatch, getState) => {
-    // const state = getState()
-    // const jwt = state.user.jwt
+    const state = getState()
+    const jwt = state.user.jwt
 
     request
     .post(`${baseUrl}/students/${evaluation.studentId}/evaluations`)
-    //.set('Authorization', `Bearer ${jwt}`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send(evaluation)
       .then(response => dispatch({
           type: ADD_EVALUATION,
@@ -23,12 +23,12 @@ export const createEvaluation = (evaluation) => (dispatch, getState) => {
   }
 
   export const getEvaluations = (studentId) => (dispatch, getState) => {
-    // const state = getState()
-    // const jwt = state.user.jwt
+    const state = getState()
+    const jwt = state.user.jwt
   
     request
       .get(`${baseUrl}/students/${studentId}/evaluations`)
-      //.set('Authorization', `Bearer ${jwt}`)
+      .set('Authorization', `Bearer ${jwt}`)
       .then(response => {
         dispatch({
           type: GET_EVALUATIONS,

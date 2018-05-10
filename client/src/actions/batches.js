@@ -15,12 +15,12 @@ export const UPDATE_BATCHES = 'UPDATE_BATCHES'
   })
 
 export const createBatch = (data) => (dispatch, getState) => {
-    //const state = getState()
-    //const jwt = state.currentUser.jwt
+    const state = getState()
+    const jwt = state.currentUser.jwt
 
     request
       .post(`${baseUrl}/batches`)
-      //.set('Authorization', `Bearer ${jwt}`)
+      .set('Authorization', `Bearer ${jwt}`)
       .send(data)
       .then(response => dispatch({
           type: ADD_BATCH,
@@ -30,12 +30,12 @@ export const createBatch = (data) => (dispatch, getState) => {
   }
 
   export const getBatch = (batchId) => (dispatch, getState) => {
-    //const state = getState()
-    //const jwt = state.currentUser.jwt
+    const state = getState()
+    const jwt = state.currentUser.jwt
   
     request
       .get(`${baseUrl}/batches/${batchId}`)
-      //.set('Authorization', `Bearer ${jwt}`)
+      .set('Authorization', `Bearer ${jwt}`)
       .then(response => {
         dispatch({
           type: GET_BATCH,

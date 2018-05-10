@@ -20,7 +20,7 @@ class BatchesList extends PureComponent {
 renderBatch = (batch, index) => {
 
     return (
-        <Grid item xs={12} sm={4} key={index}>
+        <Grid item xs={12} sm={3} key={index}>
             <Card className="batch-card">
             <CardContent>
                 <Typography variant="headline" component="h2">
