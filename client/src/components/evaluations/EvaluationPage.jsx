@@ -37,7 +37,7 @@ class EvaluationPage extends PureComponent {
         <CardMedia
                     className='media'
                     title='foto of student'
-                    image={student.picture} 
+                    image={student.picture || '/placeholder.png'} 
                     style={{width: 151, height: 151,}}
                 />
         <CardContent>
@@ -67,7 +67,7 @@ class EvaluationPage extends PureComponent {
 
 const mapStateToProps = function (state) {
 	return {
-        student: state.students,
+        student: state.student,
         evaluation: state.evaluations
         
 	}

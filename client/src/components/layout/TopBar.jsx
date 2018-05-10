@@ -34,6 +34,10 @@ const TopBar = (props) => {
           location.pathname.indexOf('batches/') > 0 &&
           <Button color="inherit" onClick={() => history.push('/batches')}>All Batches</Button>
         }
+         {
+          location.pathname.indexOf('students/') > 0 &&
+          <Button color="inherit" onClick={() => history.push('/batches/:id')}>All Students</Button>
+        }
         {
           /batches$/.test(location.pathname) &&
           <Button color="inherit" onClick={() => history.push('/logout')}>Log out</Button>

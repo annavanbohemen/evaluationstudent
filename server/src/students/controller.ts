@@ -10,7 +10,6 @@ import { Authorized, BadRequestError, Body, Delete, Get, HttpCode, JsonControlle
     async getStudent(
       @Param('id') studentId: number
     ) {
-      console.log('backend', studentId)
       const student = await Student.findOneById(studentId)
       if(!student) throw new NotFoundError('Student not found.')
   
