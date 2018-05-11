@@ -30,7 +30,11 @@ class AskQButton extends PureComponent {
 
         let chosenStudent = selectedStudents[Math.floor(Math.random()*selectedStudents.length)]
 
-        alert(chosenStudent.firstName + ' ' + chosenStudent.lastName)
+        if(!chosenStudent) {
+            alert("not enough student evaluations, please try again!")
+        } else {
+            alert(chosenStudent.firstName + ' ' + chosenStudent.lastName)
+        }
     }
 
 
