@@ -6,7 +6,7 @@ import Button from 'material-ui/Button'
 import {withRouter} from 'react-router'
 import {userId} from '../../jwt'
 import {connect} from 'react-redux'
-import AccountIcon from 'material-ui-icons/AccountBox'
+
 
 const TopBar = (props) => {
   const { location, history, user } = props
@@ -19,7 +19,7 @@ const TopBar = (props) => {
         </Typography>
         {
           user &&
-          <Button color="inherit"><AccountIcon /> { user.email }</Button>
+          <Button color="inherit">{ user.email }</Button>
         }
 
         {
