@@ -94,9 +94,9 @@ The database containes four tables:
 
 |**URI**|**ACTION**|
 |---------------------|--------------------------------------|
-| /logout             | lougoutPage                          |
-| /login              | loginPage                            |
-| /signup             | signupPage                           |
+| /logout             | logout Page                          |
+| /login              | login Page                            |
+| /signup             | signup Page                           |
 | /batches            | All batches/ classes                 |
 | /batches/:id        | one batch with all students          |
 | /students/:id       | Student, details and evaluations     |
