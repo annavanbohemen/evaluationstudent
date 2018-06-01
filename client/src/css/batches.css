@@ -2,7 +2,6 @@
   
   .batch-card {
     margin: 20px 10px 10px 0px;
-    font-family: 'Montserrat', sans-serif;
     /* background: linear-gradient(45deg, #F2CAD8 30%, #F50057 90%) */
   }
   
@@ -11,7 +10,7 @@
     margin-top: 20px;
     padding: 20px;
     width: 60%;
-    font-family: 'Montserrat', sans-serif;
   }
+
 
   

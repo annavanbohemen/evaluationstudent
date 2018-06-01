@@ -26,7 +26,8 @@ renderBatch = (batch, index) => {
             <Card className="batch-card">
             <CardContent>
                 <Typography variant="headline" component="h2">
-                    # BATCH{batch.batchNumber}
+                <img className="studentEval" src="logo.png" alt="Logo"/> 
+                    Batch #{batch.batchNumber}
                 </Typography>
                 <Typography component="p">
                     Start date: {batch.startDate}<br />

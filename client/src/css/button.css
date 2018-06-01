@@ -6,7 +6,6 @@
     background: linear-gradient(0.25turn,#0058CF, #3F97FF);
     color: white;
     border: none;
-    font-family: 'Montserrat-Bold', sans-serif;
     letter-spacing: 1px; 
   }
 
@@ -18,6 +17,5 @@
     background: linear-gradient(0.50turn, #F2CAD8, #F50057);
     color: white;
     border: none;
-    font-family: 'Montserrat-Bold', sans-serif;
     letter-spacing: 1px; 
   }
