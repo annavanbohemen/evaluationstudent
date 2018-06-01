@@ -10,6 +10,7 @@ class LogoutPage extends PureComponent {
 
 	render() {
 		if (!this.props.currentUser) return (
+			localStorage.clear(),
 			<Redirect to="/" />
 		)
 
