@@ -5,9 +5,11 @@ import Paper from 'material-ui/Paper'
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField'
 import {createBatch} from '../../actions/batches'
-import './batches.css'
 
-
+//styling
+import '../../css/batches.css'
+import '../../css/button.css'
+import '../../css/index.css'
 
 class BatchesPage extends PureComponent {
     state = {}
@@ -69,7 +71,7 @@ class BatchesPage extends PureComponent {
                                 type='submit'
                                 color="secondary"
                                 variant="raised"
-                                className="create-batch"
+                                className="customButton"
                                 >
                                 Create Batch
                             </Button>

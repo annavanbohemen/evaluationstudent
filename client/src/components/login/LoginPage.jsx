@@ -4,6 +4,9 @@ import {login} from '../../actions/users'
 import LoginForm from './LoginForm'
 import {Redirect} from 'react-router-dom'
 
+//styling
+import '../../css/index.css'
+
 class LoginPage extends PureComponent {
 	handleSubmit = (data) => {
 		this.props.login(data.email, data.password)
@@ -15,7 +18,7 @@ class LoginPage extends PureComponent {
 		)
 
 		return (
-			<div>
+			<div className="generalPage">
 				<h1>Login</h1>
 
 				<LoginForm onSubmit={this.handleSubmit} />

@@ -1,5 +1,9 @@
 import React, {PureComponent} from 'react'
 
+//Styling
+import '../../css/forms.css'
+import '../../css/button.css'
+
 export default class LoginForm extends PureComponent {
 	state = {}
 
@@ -20,20 +24,20 @@ export default class LoginForm extends PureComponent {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<div>
-					<label htmlFor="email">Email</label>
+					<label className="formLabel" htmlFor="email">Email</label>
 					<input type="email" name="email" id="email" value={
 						this.state.email || ''
 					} onChange={ this.handleChange } />
 				</div>
 
 				<div>
-					<label htmlFor="password">Password</label>
+					<label className="formLabel" htmlFor="password">Password</label>
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
 					} onChange={ this.handleChange } />
 				</div>
 
-				<button type="submit">Login</button>
+				<button className="customButton" type="submit">Login</button>
 			</form>
 		)
 	}

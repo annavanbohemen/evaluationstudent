@@ -4,11 +4,13 @@ import Card, {CardActions, CardContent} from 'material-ui/Card';
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
 import Grid from 'material-ui/Grid';
-//import CreateIcon from '@material-ui/icons/Create'
-//import InfoOutlineIcon from '@material-ui/icons/InfoOutlineIcon'
-import './batches.css'
 import { getBatches } from '../../actions/batches'
 import {Link} from 'react-router-dom'
+
+//styling
+import '../../css/batches.css'
+import '../../css/button.css'
+import '../../css/index.css'
 
 class BatchesList extends PureComponent {
 
@@ -37,6 +39,7 @@ renderBatch = (batch, index) => {
                         size="small"
                         color="secondary"
                         variant="raised"
+                        className='batchbutton'
                     >
                         TO BATCH
                     </Button>

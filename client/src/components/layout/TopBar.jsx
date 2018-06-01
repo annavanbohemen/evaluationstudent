@@ -7,15 +7,17 @@ import {withRouter} from 'react-router'
 import {userId} from '../../jwt'
 import {connect} from 'react-redux'
 
+import '../../css/Topbar.css'
+
 
 const TopBar = (props) => {
   const { location, history, user } = props
 
   return (
-    <AppBar position="absolute" style={{zIndex:10, backgroundColor: '#F50057'}}>
+    <AppBar position="absolute" style={{zIndex:10, background: 'linear-gradient(45deg, #F2CAD8 30%, #F50057 90%)'}}>
       <Toolbar>
         <Typography variant="title" color="inherit" style={{flex: 1}}>
-         Student Evaluator
+         <img className="studentEval"src="logostudentevaluations.png" alt="Logo"/>
         </Typography>
         {
           user &&
