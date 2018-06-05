@@ -11,7 +11,7 @@ import '../../css/Topbar.css'
 
 
 const TopBar = (props) => {
-  const { location, history, user } = props
+  const { location, history, user} = props
 
   return (
     <AppBar position="absolute" style={{zIndex:10, background: 'linear-gradient(45deg, #F2CAD8 30%, #F50057 90%)'}}>

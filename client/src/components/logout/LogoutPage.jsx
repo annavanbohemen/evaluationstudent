@@ -9,7 +9,9 @@ class LogoutPage extends PureComponent {
 	}
 
 	render() {
-		if (!this.props.currentUser) return (
+		const {authenticated} = this.props
+
+		if (!authenticated) return (
 			localStorage.clear(),
 			<Redirect to="/" />
 		)

@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import StudentsList from './StudentsList'
 import PercentageBar from './PercentageBar'
@@ -32,7 +33,10 @@ class StudentsPage extends PureComponent {
 
 
     render() {
+        const {authenticated} = this.props
         const initialValues = this.props.initialValues || {}
+
+        if (!authenticated) return ( <Redirect to="/login" /> )
 
         return(
             <Paper className="outer-paper">
@@ -81,6 +85,7 @@ class StudentsPage extends PureComponent {
                 </form>
                           <PercentageBar/>
 
+
                     <AskQButton/>
 
                 <StudentsList/>
@@ -92,7 +97,8 @@ class StudentsPage extends PureComponent {
 
 const mapStateToProps = function (state) {
 	return {
-        students: state.students,
+        authenticated: state.currentUser !== null,
+        students: state.students
 	}
 }
 

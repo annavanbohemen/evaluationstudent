@@ -5,44 +5,53 @@ import './students.css'
 
 class AskQButton extends PureComponent {
 
-    generatePercentageColor = (colors, percentages) => {
-        let percentage_colors = []
-         
-        colors.forEach((color, index) => {
-            let colorArray = Array(percentages[index]).fill(color)
-            percentage_colors.push(...colorArray)
-        })
-        
-        return percentage_colors;
-    }
-
     randomStudent = (event) => {
         event.preventDefault()
         const {students} = this.props
+        const studentsToChose = []
 
-        const colors = ['red', 'yellow', 'green']
-        const percentages = [53, 28, 19]
-        const percentage_colors = this.generatePercentageColor(colors, percentages)
+    const pushRandomByColor = (color, allStudents) => {
+        const {students} = this.props
 
-        let pickedColor = percentage_colors[Math.floor(Math.random()*percentage_colors.length)]
-
-        let selectedStudents = students.filter(student => student.evaluations[0].color === pickedColor)
-
-        let chosenStudent = selectedStudents[Math.floor(Math.random()*selectedStudents.length)]
-
-        if(!chosenStudent) {
-            alert("not enough student evaluations, please try again!")
-        } else {
-            alert(chosenStudent.firstName + ' ' + chosenStudent.lastName)
-        }
+        let studentsColor = students.filter(student => student.evaluations[0].color === color)
+        if (studentsColor.length === 0 ) return null
+        let colorToAdd = studentsColor[Math.floor(Math.random()*studentsColor.length)]
+        studentsToChose.push(colorToAdd)
     }
 
-
-
+    while (studentsToChose.length<100) {
+        while(studentsToChose.length<53) {
+            const statusRed = pushRandomByColor('red', students)
+            if(statusRed === null) {
+                const statusGrey = pushRandomByColor('Not Graded Yet!', students)
+                if(statusGrey === null) break
+            }
+        }
+        while(studentsToChose.length<81) {
+            const statusYellow = pushRandomByColor('yellow', students)
+            if(statusYellow === null) {
+                const statusGrey = pushRandomByColor('Not Graded Yet!', students)
+                if(statusGrey === null) break
+            }
+        }
+        
+        const statusGreen = pushRandomByColor('green', students)
+        if(statusGreen === null) {
+            const statusGrey = pushRandomByColor('Not Graded Yet!', students)
+            if(statusGrey === null) break
+        }
+          
+    }
+    const chosenStudent = studentsToChose[Math.floor(Math.random()*studentsToChose.length)];
+    return alert(chosenStudent.firstName + ' ' + chosenStudent.lastName)
+}
 
 
     render() {
+        const {evaluations} = this.props
+        console.log(evaluations)
 
+        if (evaluations.length === 0) return null
 
         return (
             <div className="ask-question">
@@ -64,6 +73,7 @@ class AskQButton extends PureComponent {
 const mapStateToProps = function (state) {
 	return {
         students: state.students,
+        evaluations: state.evaluations
 	}
 }
 

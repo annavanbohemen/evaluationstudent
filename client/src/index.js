@@ -14,7 +14,7 @@ const THEME = createMuiTheme({
    "fontSize": 14,
    "fontWeightLight": 300,
    "fontWeightRegular": 400,
-   "fontWeightBold": 700
+   "fontWeightBold": 700 
   }
 });
 
