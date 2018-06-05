@@ -48,10 +48,11 @@ class AskQButton extends PureComponent {
 
 
     render() {
-        const {evaluations} = this.props
-        console.log(evaluations)
+        const {students} = this.props
 
-        if (evaluations.length === 0) return null
+        console.log(students.filter(student => student.evaluations[0]).length)
+
+        if (students.filter(student => student.evaluations[0]).length === 0) return null
 
         return (
             <div className="ask-question">
@@ -72,8 +73,7 @@ class AskQButton extends PureComponent {
 
 const mapStateToProps = function (state) {
 	return {
-        students: state.students,
-        evaluations: state.evaluations
+        students: state.students
 	}
 }
 
