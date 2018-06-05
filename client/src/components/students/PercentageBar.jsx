@@ -32,19 +32,19 @@ class PercentageBar extends PureComponent {
     const allStudents = students.length
   
     const redStudents = students.filter(student => student.evaluations[0].color === 'red').length
-    const redStudentsPercentage = redStudents / allStudents * 100
+    const redStudentsPercentage = (redStudents / allStudents * 100).toFixed(2)
    
     const yellowStudents = students.filter(student => student.evaluations[0].color === 'yellow').length
-    const yellowStudentsPercentage = yellowStudents / allStudents * 100
-   
+    const yellowStudentsPercentage = (yellowStudents / allStudents * 100).toFixed(2)
+  
     const greenStudents = students.filter(student => student.evaluations[0].color === 'green').length
-    const greenStudentsPercentage = greenStudents / allStudents * 100
+    const greenStudentsPercentage = (greenStudents / allStudents * 100).toFixed(2)
 
     return(
         <div id="myProgress">
-          <div id="myGreenBar" style={{width: Math.floor( greenStudentsPercentage ) + '%'}}>{Math.floor(greenStudentsPercentage)}%</div>
-          <div id='myYellowBar' style={{width: Math.floor( yellowStudentsPercentage ) + '%'}}>{Math.floor(yellowStudentsPercentage)}%</div>
-          <div id='myRedBar' style={{width: Math.floor( redStudentsPercentage ) + '%'}}>{Math.floor(redStudentsPercentage)}%</div>
+          <div id="myGreenBar" style={{width: greenStudentsPercentage + '%'}}>{greenStudentsPercentage}%</div>
+          <div id='myYellowBar' style={{width: yellowStudentsPercentage + '%'}}>{yellowStudentsPercentage}%</div>
+          <div id='myRedBar' style={{width: redStudentsPercentage + '%'}}>{redStudentsPercentage}%</div>
         </div>
     )
   
