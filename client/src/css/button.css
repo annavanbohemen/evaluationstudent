@@ -3,7 +3,7 @@
     padding: 10px 25px;
     border-radius: 3px;
     font-size: 16px;
-    background: linear-gradient(0.25turn,#0058CF, #3F97FF);
+    background: linear-gradient(0.25turn,#0000f5, #9999ff);
     color: white;
     border: none;
     letter-spacing: 1px; 
@@ -14,14 +14,14 @@
     padding: 10px 25px;
     border-radius: 3px;
     font-size: 16px;
-    background: linear-gradient(0.50turn, #F2CAD8, #F50057);
+    background: linear-gradient(0.50turn, #ffccde, #F50057);
     color: white;
     border: none;
     letter-spacing: 1px; 
   }
 
   .AlgoButton {
-    background: linear-gradient(0.25turn, rgb(238, 142, 176), rgb(235, 67, 126));
+    background: linear-gradient(0.25turn, #ff99bd, #ff337a);
     color: white;
     border: 5px;
   }

@@ -6,7 +6,7 @@
 
   #myGreenBar {
     height: 30px;
-    background-color: #4CAF50;
+    background-color: #00f53d;
     float: left;
     text-align: center;
     line-height: 30px; 
@@ -16,7 +16,7 @@
   #myYellowBar {
     height: 30px;
     float: left;
-    background-color: rgb(255, 217, 0); 
+    background-color: #f5f500; 
     text-align: center;
     line-height: 30px; 
     color: white; 
@@ -25,7 +25,7 @@
   #myRedBar {
     height: 30px;
     float: left;
-    background-color: rgb(255, 0, 0); 
+    background-color: #f50000; 
     text-align: center;
     line-height: 30px; 
     color: white; 
