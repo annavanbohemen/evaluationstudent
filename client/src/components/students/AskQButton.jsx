@@ -1,7 +1,11 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import Button from 'material-ui/Button';
-import './students.css'
+
+//styling
+import '../../css/students.css'
+import '../../css/button.css'
+import '../../css/index.css'
 
 class AskQButton extends PureComponent {
 
@@ -60,7 +64,7 @@ class AskQButton extends PureComponent {
                     type='submit'
                     color="secondary"
                     variant="raised"
-                    style={{backgroundColor:'#3f51b5'}}
+                    className="AlgoButton"
                     onClick={ this.randomStudent }
                      >
                     ASK RANDOM QUESTION

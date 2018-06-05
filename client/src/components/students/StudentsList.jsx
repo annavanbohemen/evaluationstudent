@@ -6,10 +6,11 @@ import Typography from 'material-ui/Typography'
 import Grid from 'material-ui/Grid';
 import InfoOutline from '@material-ui/icons/InfoOutline'
 import DeleteOutline from '@material-ui/icons/Delete'
-import './students.css'
 import { getStudents, deleteStudent } from '../../actions/students'
 import {Link} from 'react-router-dom'
 
+//styling
+import '../../css/students.css'
   
 class StudentsList extends PureComponent {
 

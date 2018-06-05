@@ -17,7 +17,7 @@ const TopBar = (props) => {
     <AppBar position="absolute" style={{zIndex:10, background: 'linear-gradient(45deg, #F2CAD8 30%, #F50057 90%)'}}>
       <Toolbar>
         <Typography variant="title" color="inherit" style={{flex: 1}}>
-         <img className="studentEval"src="logostudentevaluations.png" alt="Logo"/>
+         <img className="studentEval" src="/logostudentevaluations.png" alt="Logo"/>
         </Typography>
         {
           user &&

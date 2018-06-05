@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import './students.css'
+
+//styling
+import '../../css/students.css'
 
 class PercentageBar extends PureComponent {
 

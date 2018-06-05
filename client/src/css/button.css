@@ -1,5 +1,5 @@
 .customButton {
-    margin-top: 10px;
+    margin-left: 10px;
     padding: 10px 25px;
     border-radius: 3px;
     font-size: 16px;
@@ -18,4 +18,10 @@
     color: white;
     border: none;
     letter-spacing: 1px; 
+  }
+
+  .AlgoButton {
+    background: linear-gradient(0.25turn, #0058CF, #3F97FF, #F50057);
+    color: white;
+    border: 5px;
   }

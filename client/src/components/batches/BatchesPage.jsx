@@ -39,6 +39,7 @@ class BatchesPage extends PureComponent {
                         label='Batch Number'
                         name='batchNumber'
                         placeholder='#'
+                        style={{margin: 10}}
                         InputLabelProps={{
                             shrink: true,
                           }}
@@ -50,6 +51,7 @@ class BatchesPage extends PureComponent {
                         label='Start Date'
                         name='startDate'
                         type='date'
+                        style={{margin: 10}}
                         InputLabelProps={{
                             shrink: true,
                           }}
@@ -61,6 +63,7 @@ class BatchesPage extends PureComponent {
                         label='End Date'
                         name='endDate'
                         type='date'
+                        style={{margin: 10}}
                         InputLabelProps={{
                             shrink: true,
                           }}

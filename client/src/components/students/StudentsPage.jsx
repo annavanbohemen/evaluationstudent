@@ -8,7 +8,9 @@ import Paper from 'material-ui/Paper'
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField'
 import {createStudent} from '../../actions/students'
-import './students.css'
+
+//styling
+import '../../css/students.css'
 
 
 
@@ -78,7 +80,7 @@ class StudentsPage extends PureComponent {
                                 type='submit'
                                 color="secondary"
                                 variant="raised"
-                                className="create-student"
+                                className="customButton"
                                 >
                                 Create Student
                             </Button>
