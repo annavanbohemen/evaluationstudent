@@ -69,7 +69,7 @@ class EvaluationForm extends PureComponent {
                         <Button 
                             type='submit'
                             variant="raised" 
-                            className="question-action"
+                            className="pinkButton"
                             color="secondary"
                             onClick={window.history.go(1)}
                         > 

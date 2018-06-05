@@ -60,6 +60,7 @@ class EvaluationPage extends PureComponent {
                 type='submit'
                 variant="raised" 
                 color="secondary"
+                className="pinkButton"
                 onClick={ this.toggleEdit }
                 > 
                             EDIT 

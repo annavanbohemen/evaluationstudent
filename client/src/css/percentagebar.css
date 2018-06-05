@@ -1,0 +1,32 @@
+#myProgress {
+    width: 100%;
+    background-color: rgb(246, 245, 245);
+    overflow: hidden;
+  }
+
+  #myGreenBar {
+    height: 30px;
+    background-color: #4CAF50;
+    float: left;
+    text-align: center;
+    line-height: 30px; 
+    color: white; 
+  }
+  
+  #myYellowBar {
+    height: 30px;
+    float: left;
+    background-color: rgb(255, 217, 0); 
+    text-align: center;
+    line-height: 30px; 
+    color: white; 
+  }
+  
+  #myRedBar {
+    height: 30px;
+    float: left;
+    background-color: rgb(255, 0, 0); 
+    text-align: center;
+    line-height: 30px; 
+    color: white; 
+  }

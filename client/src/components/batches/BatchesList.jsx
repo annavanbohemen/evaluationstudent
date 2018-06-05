@@ -40,7 +40,7 @@ renderBatch = (batch, index) => {
                         size="small"
                         color="secondary"
                         variant="raised"
-                        className='batchbutton'
+                        className='pinkButton'
                     >
                         TO BATCH
                     </Button>

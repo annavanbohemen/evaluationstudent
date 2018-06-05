@@ -19,42 +19,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-#myProgress {
-  width: 100%;
-  background-color: rgb(246, 245, 245);
-  overflow: hidden;
-}
-
-#myBar {
-  width: 50%;
-  height: 30px;
-  background-color: #4CAF50;
-  float: left;
-  text-align: center;
-  line-height: 30px; 
-  color: white; 
-}
-
-#mySecBar {
-  width: 40%;
-  height: 30px;
-  float: left;
-  background-color: rgb(255, 217, 0); 
-  text-align: center;
-  line-height: 30px; 
-  color: white; 
-}
-
-#myThirdBar {
-  width: 25%;
-  height: 30px;
-  float: left;
-  background-color: rgb(255, 0, 0); 
-  text-align: center;
-  line-height: 30px; 
-  color: white; 
-}
-
 .ask-question {
   margin: 20px 10px 10px 0px;
   float: right;

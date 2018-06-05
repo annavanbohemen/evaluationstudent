@@ -64,7 +64,7 @@ render() {
                             type='submit'
                             color="secondary"
                             variant="raised"
-                            className="update-student"
+                            className="blueButton"
                             >
                             Update Student
                         </Button>

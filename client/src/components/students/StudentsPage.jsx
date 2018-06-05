@@ -80,7 +80,7 @@ class StudentsPage extends PureComponent {
                                 type='submit'
                                 color="secondary"
                                 variant="raised"
-                                className="customButton"
+                                className="blueButton"
                                 >
                                 Create Student
                             </Button>

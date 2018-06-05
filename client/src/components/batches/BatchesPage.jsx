@@ -74,7 +74,7 @@ class BatchesPage extends PureComponent {
                                 type='submit'
                                 color="secondary"
                                 variant="raised"
-                                className="customButton"
+                                className="blueButton"
                                 >
                                 Create Batch
                             </Button>

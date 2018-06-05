@@ -1,4 +1,4 @@
-.customButton {
+.blueButton {
     margin-left: 10px;
     padding: 10px 25px;
     border-radius: 3px;
@@ -9,7 +9,7 @@
     letter-spacing: 1px; 
   }
 
-  .batchbutton {
+  .pinkButton {
     margin-top: 10px;
     padding: 10px 25px;
     border-radius: 3px;
@@ -21,7 +21,7 @@
   }
 
   .AlgoButton {
-    background: linear-gradient(0.25turn, #0058CF, #3F97FF, #F50057);
+    background: linear-gradient(0.25turn, rgb(238, 142, 176), rgb(235, 67, 126));
     color: white;
     border: 5px;
   }

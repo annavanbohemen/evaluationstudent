@@ -54,8 +54,6 @@ class AskQButton extends PureComponent {
     render() {
         const {students} = this.props
 
-        console.log(students.filter(student => student.evaluations[0]).length)
-
         if (students.filter(student => student.evaluations[0]).length === 0) return null
 
         return (
