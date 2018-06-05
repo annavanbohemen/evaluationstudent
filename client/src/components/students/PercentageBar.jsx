@@ -31,20 +31,20 @@ class PercentageBar extends PureComponent {
 
     const allStudents = students.length
   
-    const redStudents = students.filter(student => student.evaluations[0].color === 'red').length
-    const redStudentsPercentage = (redStudents / allStudents * 100).toFixed(2)
+    const redStudents = students.filter(student => student.evaluations[student.evaluations.length -1].color === 'red').length
+    const redStudentsPercentage = (redStudents / allStudents * 100)
    
-    const yellowStudents = students.filter(student => student.evaluations[0].color === 'yellow').length
-    const yellowStudentsPercentage = (yellowStudents / allStudents * 100).toFixed(2)
+    const yellowStudents = students.filter(student => student.evaluations[student.evaluations.length -1].color === 'yellow').length
+    const yellowStudentsPercentage = (yellowStudents / allStudents * 100)
   
-    const greenStudents = students.filter(student => student.evaluations[0].color === 'green').length
-    const greenStudentsPercentage = (greenStudents / allStudents * 100).toFixed(2)
+    const greenStudents = students.filter(student => student.evaluations[student.evaluations.length -1].color === 'green').length
+    const greenStudentsPercentage = (greenStudents / allStudents * 100)
 
     return(
         <div id="myProgress">
-          <div id="myGreenBar" style={{width: greenStudentsPercentage + '%'}}>{greenStudentsPercentage}%</div>
-          <div id='myYellowBar' style={{width: yellowStudentsPercentage + '%'}}>{yellowStudentsPercentage}%</div>
-          <div id='myRedBar' style={{width: redStudentsPercentage + '%'}}>{redStudentsPercentage}%</div>
+          <div id="myGreenBar" style={{width: greenStudentsPercentage + '%'}}>{greenStudentsPercentage.toFixed(2)}%</div>
+          <div id='myYellowBar' style={{width: yellowStudentsPercentage + '%'}}>{yellowStudentsPercentage.toFixed(2)}%</div>
+          <div id='myRedBar' style={{width: redStudentsPercentage + '%'}}>{redStudentsPercentage.toFixed(2)}%</div>
         </div>
     )
   

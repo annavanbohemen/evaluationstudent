@@ -30,8 +30,9 @@ class StudentsList extends PureComponent {
 
     renderStudent = (student, index) => {
         let evalutionImage = '/notebook-grey.png'
+
         if(student.evaluations && student.evaluations.length > 0){
-            evalutionImage = `/notebook-${student.evaluations[0].color}.png`
+            evalutionImage = `/notebook-${student.evaluations[student.evaluations.length -1].color}.png`
         }
         
         return (
