@@ -32,7 +32,7 @@ class BatchesPage extends PureComponent {
         const initialValues = this.props.initialValues || {}
 
         return(
-            <Paper className="outer-paper">
+            <Paper className="outer-paper" style={{minHeight: '40vh'}}>
                <form onSubmit={this.handleSubmit}>
                     <TextField
                         id='batch'

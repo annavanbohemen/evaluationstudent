@@ -41,7 +41,7 @@ class StudentsPage extends PureComponent {
         if (!authenticated) return ( <Redirect to="/login" /> )
 
         return(
-            <Paper className="outer-paper">
+            <Paper className="outer-paper" style={{minHeight: '40vh'}}>
                <form onSubmit={this.handleSubmit} className='createStudent'>
                     <TextField
                         id='student'
